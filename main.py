@@ -115,8 +115,10 @@ def build_tier_boundaries(tier_breaks: dict) -> list:
     for i, (tier, ceiling) in enumerate(sorted_tiers):
         floor = float(sorted_tiers[i - 1][1]) if i > 0 else 0.0
         boundaries.append((tier, float(floor), float(ceiling)))
-    last_tier, last_floor, _ = boundaries[-1]
-    boundaries[-1] = (last_tier, last_floor, float("inf"))
+    #last_tier, last_floor, _ = boundaries[-1]
+    #boundaries[-1] = (last_tier, last_floor, float("inf"))
+    last_tier, last_floor, last_ceiling = boundaries[-1]
+    boundaries.append((last_tier + 1, last_ceiling, float("inf")))
     return boundaries
 
 
