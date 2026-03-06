@@ -422,7 +422,7 @@ def build_layout(aggregators):
                "fontFamily": "IBM Plex Mono, monospace",
                "color": "#C9D1D9", "padding": "24px"},
         children=[
-            html.H2("NOVELLIA · CARDIOVEX Account · VOLUME & REVENUE FORECAST",
+            html.H2("NOVELLIA · CARDIOVEX ACCOUNT · VOLUME & REVENUE FORECAST",
                     style={"color": "#58A6FF", "letterSpacing": "0.15em",
                            "fontSize": "18px", "marginBottom": "4px"}),
             html.P("Q4 2025 baseline -> Q4 2027  |  Tier breaks overlaid  |  Live parameter tuning",
