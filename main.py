@@ -376,7 +376,7 @@ def _slider(id_, min_val, max_val, step, default):
              for v in [min_val, (min_val + max_val) / 2, max_val]}
     return dcc.Slider(id=id_, min=min_val, max=max_val, step=step,
                       value=default, marks=marks,
-                      tooltip={"placement": "bottom", "always_visible": True})
+                      tooltip={"placement": "top", "always_visible": False})
 
 def _num_input(id_, value, min_val=None, step=1, width="75px"):
     return dcc.Input(id=id_, type="number", value=value,
