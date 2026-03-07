@@ -682,13 +682,13 @@ def create_app(source_df: pd.DataFrame) -> Dash:
 # Entry point
 # ---------------------------------------------------------------------------
 
-app = create_app(randomized_accounts_df)
+app = create_app(randomized_accounts_df, title="Tier Dashboard")
 server = app.server  # required for gunicorn
 
 if __name__ == "__main__":
     def open_browser():
         webbrowser.open(f"http://localhost:{PORT}")
 
-    print(f"Novellia Dashboard running at http://localhost:{PORT}")
+    #print(f"Novellia Dashboard running at http://localhost:{PORT}")
     threading.Timer(1.5, open_browser).start()
     app.run(debug=False, port=PORT)
