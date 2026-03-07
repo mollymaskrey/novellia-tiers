@@ -507,7 +507,7 @@ def build_layout(aggregators):
                         "backgroundColor": "#161B22",
                         "border": "1px solid #30363D",
                         "borderRadius": "8px", "padding": "14px",
-                        "maxHeight": "960px", "overflowY": "auto",
+                        "maxHeight": "1200px", "overflowY": "auto",
                     }, children=[
                         _section("WAC"),
                         _label("2026 WAC"),
@@ -578,7 +578,7 @@ def create_app(source_df: pd.DataFrame) -> Dash:
     aggregators = sorted(source_df["Account Name"].astype(str).unique().tolist())
     tier_ids    = [f"tier-{t}" for t in sorted(DEFAULT_BASELINE_TIER_BREAKS.keys())]
 
-    app = Dash(__name__, external_stylesheets=[
+    app = Dash(__name__, title="Tier Dashboard",external_stylesheets=[
         dbc.themes.DARKLY,
         "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap",
     ])
@@ -682,7 +682,7 @@ def create_app(source_df: pd.DataFrame) -> Dash:
 # Entry point
 # ---------------------------------------------------------------------------
 
-app = create_app(randomized_accounts_df, title="Tier Dashboard")
+app = create_app(randomized_accounts_df)
 server = app.server  # required for gunicorn
 
 if __name__ == "__main__":
