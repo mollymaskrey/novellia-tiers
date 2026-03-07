@@ -470,8 +470,7 @@ def build_layout(aggregators):
                     # Center: Charts
                     html.Div(style={"flex": "1"}, children=[
                         dcc.Graph(id="forecast-chart",
-                                  config={"displayModeBar": True,
-                                          "displaylogo": False},
+                                  config={"displayModeBar": False},
                                   style={"height": "680px",
                                          "marginBottom": "12px"}),
                         html.Div([
@@ -498,8 +497,7 @@ def build_layout(aggregators):
                                   "display": "flex",
                                   "alignItems": "center"}),
                         dcc.Graph(id="revenue-chart",
-                                  config={"displayModeBar": True,
-                                          "displaylogo": False},
+                                  config={"displayModeBar": False},
                                   style={"height": "380px"}),
                     ]),
 
